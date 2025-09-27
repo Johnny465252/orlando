@@ -1,0 +1,36 @@
+body {
+    background-color: #f4f4f4;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* စာမျက်နှာအပြည့်ယူဖို့ */
+    margin: 0;
+    overflow: hidden; /* scroll မလုပ်နိုင်အောင် */
+}
+
+.loading-container {
+    text-align: center;
+}
+
+.loading-icon {
+    width: 50px; /* ပုံကို 50px အကျယ်သတ်မှတ် */
+    height: 50px; /* ပုံကို 50px အမြင့်သတ်မှတ် */
+    animation: spin 2s linear infinite; /* ပုံကို လှည့်နေအောင်လုပ်တဲ့ animation */
+}
+
+/* ပုံကို လှည့်နေအောင်လုပ်တဲ့ animation ကုဒ် */
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.loading-container p {
+    margin-top: 15px;
+    font-size: 16px;
+    color: #555;
+}
