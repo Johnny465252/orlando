@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="my">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ငွေသွင်း ငွေထုတ်</title>
+    <link rel="stylesheet" href="home.css">
+    
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-database-compat.js"></script>
+</head>
+<body>
+
+    <nav class="top-nav">
+        <a href="#" class="logo-link">
+            <img src="your-logo.png" alt="Website Logo" class="logo">
+        </a>
+        <div class="user-info">
+            လက်ကျန်ငွေ: <span id="user-amount-display">-</span> ကျပ်
+        </div>
+    </nav>
+
+    <main>
+        <div id="loading-message">
+            <p>Loading...</p>
+        </div>
+
+        <div id="content" style="display: none;">
+            <div class="tab-buttons">
+                <button id="deposit-tab-button" class="tab-button active">ငွေသွင်း</button>
+                <button id="withdraw-tab-button" class="tab-button">ငွေထုတ်</button>
+            </div>
+
+            <div id="deposit-content" class="payment-container">
+                <h2>ငွေသွင်းရန်</h2>
+                <div class="payment-options">
+                    <button id="kpay-button" class="payment-button" data-method="Kpay">Kpay</button>
+                    <button id="wavepay-button" class="payment-button" data-method="Wavepay">Wavepay</button>
+                </div>
+                
+                <div id="deposit-form-details" style="display: none;">
+                    <div class="form-group">
+                        <label for="transfer-name-input">ငွေလွဲအကောင့်အမည်</label>
+                        <input type="text" id="transfer-name-input" placeholder="အမည်ထည့်ပါ">
+                    </div>
+                    <div class="form-group">
+                        <label for="receipt-number-input">ငွေလွဲပြေစာ၏နောက်ဆုံးကဏန်း6လုံး</label>
+                        <input type="number" id="receipt-number-input" placeholder="ဥပမာ: 123456" min="0" maxlength="6">
+                    </div>
+                    <div class="form-group">
+                        <label for="deposit-amount-input">ထည့်မယ့်ပမာဏ</label>
+                        <input type="number" id="deposit-amount-input" placeholder="ငွေပမာဏ ထည့်ပါ" min="1000" max="1000000">
+                    </div>
+                    
+                    <div class="transfer-info">
+                        <p>ငွေလွဲရမယ့် ဖုန်းနံပါတ်:</p>
+                        <p class="phone-number" id="transfer-phone-number">--</p>
+                        <button id="copy-button">ကူးယူရန်</button>
+                    </div>
+                    
+                    <button id="submit-deposit-form">ငွေသွင်းဖောင်တင်မယ်</button>
+                </div>
+            </div>
+
+            <div id="withdraw-content" class="payment-container" style="display: none;">
+                <h2>ငွေထုတ်ယူရန်</h2>
+                <div class="payment-options">
+                    <button id="withdraw-kpay-button" class="payment-button">Kpay</button>
+                    <button id="withdraw-wavepay-button" class="payment-button">Wavepay</button>
+                </div>
+                
+                <div id="withdraw-form-details" style="display: none;">
+                    <div class="form-group">
+                        <label for="withdraw-name-input">အကောင့်အမည်</label>
+                        <input type="text" id="withdraw-name-input" placeholder="အကောင့်ပိုင်ရှင်အမည်">
+                    </div>
+                    <div class="form-group">
+                        <label for="withdraw-phone-number-input">ဖုန်းနံပါတ်</label>
+                        <input type="text" id="withdraw-phone-number-input" placeholder="ငွေလက်ခံမည့်ဖုန်းနံပါတ်">
+                    </div>
+                    <div class="form-group">
+                        <label for="withdraw-amount-input">ထုတ်မည့်ပမာဏ (ကျပ်)</label>
+                        <input type="number" id="withdraw-amount-input" placeholder="အနည်းဆုံး 1000 ကျပ်" min="1000">
+                    </div>
+                    
+                    <button id="submit-withdraw-form" class="submit-button">ငွေထုတ်ရန် တောင်းဆိုမည်</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <nav class="bottom-nav">
+        <a href="home.html"><img src="home-icon.png" alt="Home Icon" class="nav-icon"></a>
+        <a href="payment.html"><img src="info-icon.png" alt="Payment Icon" class="nav-icon"></a>
+        <a href="services.html"><img src="services-icon.png" alt="Services Icon" class="nav-icon"></a>
+        <a href="contact.html"><img src="contact-icon.png" alt="Contact Icon" class="nav-icon"></a>
+    </nav>
+
+    <script src="payment.js"></script>
+
+</body>
+</html>
