@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="my">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D ထီထိုးမည်</title>
+    
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="three.css">
+    
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-database-compat.js"></script>
+</head>
+<body>
+
+    <nav class="top-nav">
+        <a href="#" class="logo-link">
+            <img src="your-logo.png" alt="Website Logo" class="logo">
+        </a>
+    </nav>
+
+    <main>
+        
+        <div id="filter-loading-overlay" class="filter-loading-overlay" style="display: none;">
+            <p>နံပါတ်များ စီစဉ်နေသည်...</p>
+        </div>
+
+        <div id="loading-message">
+            <p>Loading...</p>
+        </div>
+
+        <div id="content" style="display: none;">
+            
+            <table id="amount-table">
+                <tbody>
+                    <tr>
+                        <td>သင့်ပိုက်ဆံ</td>
+                        <td><span id="user-amount-display"></span> ကျပ်</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="bet-input-container">
+                <input type="number" id="bet-amount-input" placeholder="ပိုက်ဆံထည့်ပါ">
+                <button id="r-button">R</button>
+                <button id="bet-button" class="bet-button">ထိုးမည်</button>
+            </div>
+            
+            <div id="selected-numbers-display" style="margin-top: 15px; padding: 10px; border: 1px solid #ff8800; text-align: center;">
+                <p>ရွေးထားသော 3D နံပါတ်များ: <span id="selected-numbers-text">မရှိသေးပါ</span></p>
+            </div>
+            
+            <div class="three-d-category-links" id="three-d-categories">
+                <a href="#" class="category-link" data-range="000-099"><u>000-099</u></a>
+                <a href="#" class="category-link" data-range="100-199"><u>100-199</u></a>
+                <a href="#" class="category-link" data-range="200-299"><u>200-299</u></a>
+                <a href="#" class="category-link" data-range="300-399"><u>300-399</u></a>
+                <a href="#" class="category-link" data-range="400-499"><u>400-499</u></a>
+                <a href="#" class="category-link" data-range="500-599"><u>500-599</u></a>
+                <a href="#" class="category-link" data-range="600-699"><u>600-699</u></a>
+                <a href="#" class="category-link" data-range="700-799"><u>700-799</u></a>
+                <a href="#" class="category-link" data-range="800-899"><u>800-899</u></a>
+                <a href="#" class="category-link" data-range="900-999"><u>900-999</u></a>
+            </div>
+            
+            <div class="number-button-grid" id="three-d-number-grid">
+                </div>
+            
+            <div id="extra-content-section" class="additional-info-box" style="margin-top: 20px; padding: 15px; border-top: 2px solid #ccc; text-align: center;">
+                <h3>အခြားအချက်အလက်များ သို့မဟုတ် ကြော်ငြာနေရာ</h3>
+            </div>
+
+        </div>
+    </main>
+
+    <nav class="bottom-nav">
+        <a href="home.html"><img src="home-icon.png" alt="Home Icon" class="nav-icon"></a>
+        <a href="about.html"><img src="info-icon.png" alt="Info Icon" class="nav-icon"></a>
+        <a href="services.html"><img src="services-icon.png" alt="Services Icon" class="nav-icon"></a>
+        <a href="contact.html"><img src="contact-icon.png" alt="Contact Icon" class="nav-icon"></a>
+    </nav>
+    
+    <script src="threed.js"></script>
+
+</body>
+</html>

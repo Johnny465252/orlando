@@ -1,0 +1,110 @@
+/* three.css */
+
+/* ========================================= */
+/* 🚀 Filter Loading Overlay Styles (အခြား Elements များကို ပိတ်ဆို့ရန်) */
+/* ========================================= */
+.filter-loading-overlay {
+    position: fixed; /* မျက်နှာပြင်တစ်ခုလုံးကို ဖုံးအုပ်ရန် */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.85); /* အဖြူရောင် အကြည်ခံ */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* အပေါ်ဆုံးမှာ ရှိနေစေရန် */
+    font-size: 1.2em;
+    color: #333;
+    font-weight: bold;
+}
+
+/* ========================================= */
+/* 3D Category Links Styles */
+/* ========================================= */
+.three-d-category-links {
+    display: flex; 
+    flex-wrap: wrap; 
+    justify-content: space-around; 
+    padding: 10px 0;
+    margin: 15px 0;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+.category-link {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    padding: 5px 8px;
+    margin: 3px 2px;
+    /* underline ကို border-bottom နဲ့ သုံးထားခြင်း */
+    border-bottom: 2px solid transparent; 
+    transition: border-bottom 0.2s;
+    font-size: 14px; 
+}
+
+/* ရွေးထားတဲ့ (Active) အုပ်စုအတွက် အရောင်နှင့် အောက်ခံစည်း ပြောင်းလဲခြင်း */
+.category-link.active {
+    color: red; 
+    border-bottom-color: red; 
+}
+
+/* ========================================= */
+/* 3D Number Buttons & Grid */
+/* ========================================= */
+.number-button-grid {
+    display: grid;
+    /* 🚀 ပြင်ဆင်ချက်: တစ်တန်း ၅ လုံးစီ ညီမျှစွာ စီရန် */
+    grid-template-columns: repeat(5, 1fr); 
+    gap: 5px;
+    margin-top: 15px;
+    grid-auto-rows: minmax(40px, auto); 
+}
+
+.number-button {
+    padding: 10px 5px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-weight: bold;
+    color: #333;
+    cursor: pointer;
+    text-align: center;
+    display: inline-block; 
+    transition: opacity 0.3s, visibility 0.3s; 
+    opacity: 1;
+    visibility: visible;
+}
+
+/* ရွေးချယ်ထားသော နံပါတ်များအတွက် အရောင် */
+.number-button.selected {
+    background-color: #ffc107; 
+    color: #333;
+    border-color: #e0a800;
+}
+
+/* ========================================= */
+/* 🚀 Filter Optimization Fix (နှေးကွေးမှုနှင့် နေရာလွတ်ပြဿနာ ဖြေရှင်းချက်) */
+/* ========================================= */
+.number-button.hidden {
+    /* နှေးကွေးမှု ဖြေရှင်းရန် - အမြင်ကို ဖျောက်ပါ */
+    opacity: 0 !important;
+    visibility: hidden !important;
+    
+    /* နေရာလွတ် ပြဿနာ ဖြေရှင်းရန် - နေရာအားလုံးကို ဖယ်ရှားပါ */
+    height: 0 !important;      
+    min-height: 0 !important; 
+    width: 0 !important;      
+    padding: 0 !important;     
+    margin: 0 !important;
+    border: 0 !important;
+    overflow: hidden;
+    
+    /* Grid Layout ထဲကနေ လုံးဝ ဖယ်ရှားပြီး နေရာယူခြင်းကို ရပ်ပါ */
+    display: none !important; 
+    
+    /* ချက်ချင်း ဖျောက်စေရန် transition ကို တိုထားသည် */
+    transition: opacity 0.1s, visibility 0.1s, height 0.1s; 
+}
