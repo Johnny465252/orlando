@@ -1,0 +1,111 @@
+ <!DOCTYPE html>
+<html lang="my">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D ထီထိုးမှတ်တမ်း</title>
+    
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="three.css"> 
+    
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-database-compat.js"></script>
+    
+    <style>
+        .history-card-container {
+            display: flex;
+            flex-direction: column;
+            gap: 10px; 
+            margin-top: 15px;
+        }
+
+        .history-card {
+            background-color: #ffffff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 15px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* ပထမလိုင်း - နံပါတ်နှင့် Status ကို ဘေးချင်းကပ်ထားပါ */
+        .card-line-1 {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        /* ဒုတိယလိုင်းနှင့် တတိယလိုင်းကို ဘေးချင်းကပ်ပြသရန် */
+        .card-line-2, .card-line-3 {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.9em;
+            color: #555;
+            margin-top: 5px;
+        }
+        
+        .bet-numbers {
+            font-size: 1.4em; /* နံပါတ်ကို ပိုကြီးအောင် */
+            font-weight: bold;
+            color: #007bff;
+        }
+        
+        .total-cost {
+            font-size: 1.0em;
+            font-weight: bold;
+            color: #333;
+        }
+    </style>
+    
+</head>
+<body>
+
+    <nav class="top-nav">
+        <a href="home.html" class="logo-link">
+            <img src="your-logo.png" alt="Website Logo" class="logo">
+        </a>
+        <h1 style="color: white; margin: 0; font-size: 1.2em;">3D ထီထိုးမှတ်တမ်း</h1>
+    </nav>
+
+    <main>
+        <div id="loading-message">
+            <p>Loading...</p>
+        </div>
+
+        <div id="content" style="display: none;">
+            
+            <table id="amount-table" style="margin-bottom: 20px;">
+                <tbody>
+                    <tr>
+                        <td>သင့်ပိုက်ဆံ</td>
+                        <td><span id="user-amount-display">0</span> ကျပ်</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="history-container">
+                
+                <div id="user-bet-history-container" class="list-container">
+                    
+                    <div id="history-list" class="history-card-container">
+                        </div>
+                    
+                    <div id="no-history-message" style="text-align: center; padding: 10px; display: none; color: #777;">
+                        မှတ်တမ်းများ မရှိသေးပါ
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <nav class="bottom-nav">
+        <a href="home.html"><img src="home-icon.png" alt="Home"></a>
+        <a href="twod.html"><img src="twod-icon.png" alt="2D"></a>
+        <a href="three.html"><img src="three-active-icon.png" alt="3D"></a>
+        <a href="profile.html"><img src="profile-icon.png" alt="Profile"></a>
+    </nav>
+
+    <script src="threed_history.js"></script> 
+</body>
+</html>
